@@ -90,6 +90,22 @@ void popAll() {
         popHEAD();
     }
 }
+// pop sort
+void popSort() {
+    Node *temp = HEAD;
+    while (temp != NULL) {
+        Node *temp2 = temp->next;
+        while (temp2 != NULL) {
+            if (temp->value > temp2->value) {
+                int tempValue = temp->value;
+                temp->value = temp2->value;
+                temp2->value = tempValue;
+            }
+            temp2 = temp2->next;
+        }
+        temp = temp->next;
+    }
+}
 
 int main(int argc, char const *argv[])
 {
